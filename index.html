@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+
+ 	<!-- animate.css -->
+ 	 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+ 	<!-- font externa -->
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<!--Import Google Icon Font-->
+    	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- css framework materialize -->	
+		<link rel="stylesheet" type="text/css" href="../blog2/css/materialize.css" media="screen,projection">
+    <!-- optimizando para dispositivos menores -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- estilos dentro da pagina fora do framework -->
+
+<style>
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+body {
+	background-color: #eeeeee;
+}
+
+.intro {
+	padding-top: 10%;
+	padding-bottom: 10%;
+	text-align: center;
+
+}
+
+.svg {
+	height: 500px;
+	width: 500px;
+	color: white;
+}
+.intro h1{
+	font-weight: 200;
+	text-transform: uppercase;
+}
+
+.intro h5{
+	text-transform: uppercase;
+	font-family: Josefin Sans; 
+	background-color: #eeeeee;
+	display: inline-block;
+	padding: 10px;
+	color: #333333;
+	font-size: 1.4rem;
+}
+
+.parallax-container{
+	position: relative;
+	height: 500px;
+	overflow: hidden;
+}
+
+.parallax-container2{
+	position: relative;
+	height: 700px;
+	overflow: hidden;
+}
+
+@media (max-width: 780px) and (min-width: 300px){
+	.parallax-container{
+		position: relative;
+		height: 780px;
+		overflow: hidden;
+	}
+}
+.about .col{
+	margin-bottom: 24px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.about h5{
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	background-color: #eeeeee;
+	display: inline-block;
+	padding: 10px;
+	color: #333333;
+}
+
+.about h6{
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 45px;
+	font-weight: 400;
+	margin-bottom: 45px;
+}
+
+.padding{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.section {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+
+}
+
+.section white{
+	background-color: #fff;
+}
+
+.container-animation{
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	text-align: center;
+}
+
+.container-animation img{
+	position: relative;
+}
+
+.phone {
+	height: 250px;
+	z-index: 3;
+	pointer-events: none;
+}
+
+.tablet {
+	height: 320px;
+	pointer-events: none;
+}
+
+.notebook{
+	height: 400px;
+	pointer-events: none;
+}
+
+.slide {
+	transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-webkit-transition:  1s ease-in-out;
+}
+
+.phone.slide {
+	transform: translate(9rem, 0px);
+	-moz-transform: translate(9rem, 0px);
+	-webkit-transform: translate(9rem, 0px);
+}
+
+.tablet.slide {
+	transform: translate(-12rem, 0px);
+	-webkit-transform: translate(-12rem, 0px);
+	-moz-transform: translate(-12rem, 0px);
+}
+
+@media (max-width: 780px) and (min-width: 300px){
+	.phone{
+		height: 60px;
+	}
+	.tablet{
+		height: 90px;
+	}
+	.notebook{
+		height: 120px;
+	}
+	.phone.slide {
+	transform: translate(3rem, 0px);
+	-moz-transform: translate(3rem, 0px);
+	-webkit-transform: translate(3rem, 0px);
+}
+
+	.tablet.slide {
+	transform: translate(-4rem, 0px);
+	-webkit-transform: translate(-4rem, 0px);
+	-moz-transform: translate(-4rem, 0px);
+}
+}
+
+.semantic h2 {
+	text-shadow: 0px 1px 1px #4d4d4d;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.container-semantic img {
+	height: 500px;
+	opacity: 0;
+	display: block;
+	-webkit-box-shadow: 10px 10px 22px 2px rgba(0,0,0,0.56);
+    -moz-box-shadow: 10px 10px 22px 2px rgba(0,0,0,0.56);
+    box-shadow: 10px 10px 22px 2px rgba(0,0,0,0.56);
+    user-drag: none; 
+    pointer-events: none;
+
+}
+</style>
+	<title>Parallax Site</title>
+</head>
+<body>
+
+<!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="../blog2/js/jquery-3.1.1.min.js"></script>
+      <script type="text/javascript" src="../blog2/js/materialize.js"></script>
+      <script type="text/javascript" src="../blog2/js/function.js"></script>
+
+<!-- menu navegação -->
+
+<header>
+	<nav>
+		<div class=" nav-wrapper purple darken-3">
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a class="waves-effect waves-light btn" href="#">Sobre</a></li>
+				<li><a class="waves-effect waves-light btn" href="#">Portfolio</a></li>
+				<li><a class="waves-effect waves-light btn" href="#">Contato</a></li>
+			</ul>
+
+			<!-- ativado em dispositivos menores -->
+
+			<ul id="mobile-demo" class="side-nav">
+				<li><a href="#">Sobre</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Contato</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<!-- apresentação -->
+
+<div class="col s12 m5 l5 intro blue darken-3 z-depth-1">
+	<!-- <div class="container"><img class="responsive-img" src="../blog2/logo.svg"></div> -->
+	<h1 class="grey-text text-lighten-5">joao p. Cortapasso</h1>
+    <h5 clas="grey lighten-4 grey-text text-darken-1">front-end developer</h5>
+</div>
+
+<!-- começo do conteúdo -->
+<!-- primeiro efeito do parallax -->
+
+<div class="parallax-container col s12 m5 l5">
+	<div class="container about center-align col s12 m5 l5">
+		<h5 clas="grey lighten-4 grey-text text-darken-1">about me</h5>
+			  <div class="divider"></div>
+					<div class="row">
+						<div class="col s12 m5 l5 card-panel hoverable lime lighten-2">
+								<h6>História</h6>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+						<div class="col s2"></div>
+							<div class="col s12 m5 l5 card hoverable">
+								<h6>Habilidades</h6>
+									 <ul class="collapsible" data-collapsible="accordion">
+    									<li>
+      										<div class="collapsible-header"><i class="material-icons">palette</i>Desginer Gráfico</div>
+      										<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    									</li>
+    									<li>
+      										<div class="collapsible-header"><i class="material-icons">code</i>Programação</div>
+      										<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    									</li>
+    									<li>
+      										<div class="collapsible-header"><i class="material-icons">devices</i>Sistemas Operacionais</div>
+      										<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    									</li>
+    									<li>
+      										<div class="collapsible-header"><i class="material-icons">build</i>Hardware</div>
+      										<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    									</li>
+    								</ul>
+							</div>
+					</div>
+				</div>
+	<div class="parallax"><img src="../blog2/images/wood.jpg" style="display: block; transform: translate3d(-50%, 224px, 0px);">
+	</div>
+</div>
+
+	<div class="col s12 m5 l5 section white z-depth-1">
+		<div class="container row col s12 m5 l5">
+			<h2 class="green-text">Responsive Design</span></h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>			
+		</div>
+		<div class="container-animation col s12 m5 l5">
+				<img class="phone noselect" src="../blog2/images/phone.png">
+				<img class="notebook noselect" src="../blog2/images/notebook.png">
+				<img class="tablet noselect" src="../blog2/images/tablet.png">
+				
+		</div>
+	</div>
+
+<div class="parallax-container2 col s12 m5 l5">
+	<div class="container semantic center-align col s12 m5 l5">
+		<h2>Semântica</h2>
+		<div class="container-semantic">
+			<img class="noselect" src="../blog2/images/semantic.png">
+		</div>
+	</div>
+	<div class="parallax responsive-img"><img src="../blog2/images/wood.jpg" style="display: block; transform: translate3d(-50%, 224px, 0px);">
+	</div>
+</div>
+
+<div class="col s12 m5 l5 section white z-depth-1">
+		<div class="container row col s12 m5 l5">
+		</div>
+
+		
+</div>
+</body>
+</html>
